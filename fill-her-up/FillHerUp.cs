@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace fill_her_up
+namespace FillHerUp
 {
     public partial class FillHerUp : Form
     {
@@ -55,7 +55,7 @@ namespace fill_her_up
             FillingList = new FillingListReader(CarList.Cars[ind].license);
             foreach (Filling fill in FillingList.Fillings)
             {
-                string[] arr = new string[4];
+                string[] arr = new string[5];
 
                 // Convert date
                 string fillDate = fill.date.Substring(fill.date.Length - 2, 2) + ".";
@@ -66,11 +66,24 @@ namespace fill_her_up
                 arr[1] = fill.amount.ToString("00.00");
                 arr[2] = fill.price.ToString("00.00");
                 arr[3] = fill.mileage.ToString();
+                arr[4] = fill.id.ToString();
 
                 ListViewItem item;
                 item = new ListViewItem(arr);
 
                 listViewFillings.Items.Add(item);
+            }
+        }
+
+        private void fillingButton_Click(object sender, EventArgs e)
+        {
+            if (listViewFillings.SelectedItems.Count == 1)
+            {
+                var ind = listViewFillings.SelectedItems[0].Index;
+//                Filling selectedFilling = FillingList.Fillings[ind];
+
+                FillingForm frm = new FillingForm(FillingList.Fillings[ind]);
+                frm.ShowDialog();
             }
         }
     }

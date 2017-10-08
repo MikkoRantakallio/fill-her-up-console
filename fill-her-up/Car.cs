@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace fill_her_up
+namespace FillHerUp
 {
     public class Car
     {

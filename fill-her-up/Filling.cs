@@ -5,10 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fill_her_up
+namespace FillHerUp
 {
     public class Filling
     {
+        [JsonProperty("id")]
+        public string id { get; set; }
+
         [JsonProperty("car")]
         public string license { get; set; }
 

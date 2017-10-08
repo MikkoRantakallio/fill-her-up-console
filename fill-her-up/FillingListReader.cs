@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fill_her_up
+namespace FillHerUp
 {
     class FillingListReader
     {
@@ -24,7 +24,7 @@ namespace fill_her_up
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-            string path = client.BaseAddress + "action=get_fillings&id=" + carId.ToUpper();
+            string path = client.BaseAddress + "action=get_fillings_with_ids&id=" + carId.ToUpper();
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(path);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();

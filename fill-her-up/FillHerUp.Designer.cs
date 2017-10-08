@@ -1,4 +1,4 @@
-﻿namespace fill_her_up
+﻿namespace FillHerUp
 {
     partial class FillHerUp
     {
@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxCars = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBoxCarDesc = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxCars = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listViewFillings = new System.Windows.Forms.ListView();
+            this.fillingButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -51,15 +52,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Car";
             // 
-            // comboBoxCars
+            // textBoxCarDesc
             // 
-            this.comboBoxCars.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCars.FormattingEnabled = true;
-            this.comboBoxCars.Location = new System.Drawing.Point(19, 52);
-            this.comboBoxCars.Name = "comboBoxCars";
-            this.comboBoxCars.Size = new System.Drawing.Size(137, 24);
-            this.comboBoxCars.TabIndex = 0;
-            this.comboBoxCars.SelectionChangeCommitted += new System.EventHandler(this.comboBoxCars_SelectionChangeCommitted);
+            this.textBoxCarDesc.Enabled = false;
+            this.textBoxCarDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCarDesc.Location = new System.Drawing.Point(19, 82);
+            this.textBoxCarDesc.Name = "textBoxCarDesc";
+            this.textBoxCarDesc.Size = new System.Drawing.Size(228, 23);
+            this.textBoxCarDesc.TabIndex = 2;
             // 
             // label1
             // 
@@ -71,14 +71,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Select car";
             // 
-            // textBoxCarDesc
+            // comboBoxCars
             // 
-            this.textBoxCarDesc.Enabled = false;
-            this.textBoxCarDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCarDesc.Location = new System.Drawing.Point(19, 82);
-            this.textBoxCarDesc.Name = "textBoxCarDesc";
-            this.textBoxCarDesc.Size = new System.Drawing.Size(228, 23);
-            this.textBoxCarDesc.TabIndex = 2;
+            this.comboBoxCars.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCars.FormattingEnabled = true;
+            this.comboBoxCars.Location = new System.Drawing.Point(19, 52);
+            this.comboBoxCars.Name = "comboBoxCars";
+            this.comboBoxCars.Size = new System.Drawing.Size(137, 24);
+            this.comboBoxCars.TabIndex = 0;
+            this.comboBoxCars.SelectionChangeCommitted += new System.EventHandler(this.comboBoxCars_SelectionChangeCommitted);
             // 
             // groupBox2
             // 
@@ -95,16 +96,29 @@
             // 
             this.listViewFillings.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewFillings.Location = new System.Drawing.Point(7, 29);
+            this.listViewFillings.MultiSelect = false;
             this.listViewFillings.Name = "listViewFillings";
             this.listViewFillings.Size = new System.Drawing.Size(482, 495);
             this.listViewFillings.TabIndex = 0;
             this.listViewFillings.UseCompatibleStateImageBehavior = false;
+            // 
+            // fillingButton
+            // 
+            this.fillingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fillingButton.Location = new System.Drawing.Point(817, 64);
+            this.fillingButton.Name = "fillingButton";
+            this.fillingButton.Size = new System.Drawing.Size(103, 23);
+            this.fillingButton.TabIndex = 2;
+            this.fillingButton.Text = "Edit";
+            this.fillingButton.UseVisualStyleBackColor = true;
+            this.fillingButton.Click += new System.EventHandler(this.fillingButton_Click);
             // 
             // FillHerUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 554);
+            this.Controls.Add(this.fillingButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FillHerUp";
@@ -125,6 +139,7 @@
         private System.Windows.Forms.ComboBox comboBoxCars;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView listViewFillings;
+        private System.Windows.Forms.Button fillingButton;
     }
 }
 

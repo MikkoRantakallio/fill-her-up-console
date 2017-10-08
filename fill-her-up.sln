@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fill-her-up", "fill-her-up\fill-her-up.csproj", "{0BC64A3E-C26E-4E28-B01B-A6B76B41FDAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FillHerUp", "fill-her-up\FillHerUp.csproj", "{0BC64A3E-C26E-4E28-B01B-A6B76B41FDAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

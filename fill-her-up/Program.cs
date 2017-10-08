@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace fill_her_up
+namespace FillHerUp
 {
     static class Program
     {

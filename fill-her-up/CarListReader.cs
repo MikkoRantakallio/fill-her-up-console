@@ -6,7 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 
-namespace fill_her_up
+namespace FillHerUp
 {
     public class CarListReader
     {
