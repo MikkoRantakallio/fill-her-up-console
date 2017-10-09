@@ -16,6 +16,10 @@ namespace FillHerUp
         {
             InitializeComponent();
             fillingTime.Value = Convert.ToDateTime(selectedFilling.date);
+            fillingLicense.Text = selectedFilling.license;
+            fillingPrice.Text = selectedFilling.price.ToString("F2");
+            fillingAmount.Text = selectedFilling.amount.ToString("F2");
+            fillingMileage.Text = selectedFilling.mileage.ToString();
         }
     }
 }
