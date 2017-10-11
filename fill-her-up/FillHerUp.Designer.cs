@@ -35,6 +35,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listViewFillings = new System.Windows.Forms.ListView();
             this.fillingButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -113,11 +114,23 @@
             this.fillingButton.UseVisualStyleBackColor = true;
             this.fillingButton.Click += new System.EventHandler(this.fillingButton_Click);
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.Location = new System.Drawing.Point(817, 94);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(103, 23);
+            this.deleteButton.TabIndex = 3;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // FillHerUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 554);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.fillingButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -140,6 +153,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView listViewFillings;
         private System.Windows.Forms.Button fillingButton;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
 

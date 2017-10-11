@@ -60,7 +60,7 @@ namespace FillHerUp
                 // Convert date
                 string fillDate = fill.date.Substring(fill.date.Length - 2, 2) + ".";
                 fillDate += fill.date.Substring(fill.date.Length - 5, 2) + ".";
-                fillDate += fill.date.Substring(0,4);
+                fillDate += fill.date.Substring(0, 4);
 
                 arr[0] = fillDate;
                 arr[1] = fill.amount.ToString("00.00");
@@ -89,6 +89,47 @@ namespace FillHerUp
             else
             {
                 string message = "Please, select a filling row.";
+                string caption = "No selection!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (listViewFillings.SelectedItems.Count == 1)
+            {
+                string message = "Are you sure you want to delete the row?";
+                string caption = "Delete";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    FillingApi fApi = new FillingApi();
+                    var ind = listViewFillings.SelectedItems[0].Index;
+
+                    // Delete from database
+                    if (!fApi.DeleteFilling(FillingList.Fillings[ind].id))
+                    {
+                        message = "Delete failed!";
+                        caption = "ERROR";
+                        buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(message, caption, buttons);
+                    }
+
+                    // Delete from list
+                    listViewFillings.Items.RemoveAt(ind);
+                }
+                listViewFillings.SelectedItems.Clear();
+                listViewFillings.Refresh();
+            }
+            else
+            {
+                string message = "Please, select a row to delete!";
                 string caption = "No selection!";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
