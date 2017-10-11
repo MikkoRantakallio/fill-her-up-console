@@ -80,10 +80,20 @@ namespace FillHerUp
             if (listViewFillings.SelectedItems.Count == 1)
             {
                 var ind = listViewFillings.SelectedItems[0].Index;
-//                Filling selectedFilling = FillingList.Fillings[ind];
 
                 FillingForm frm = new FillingForm(FillingList.Fillings[ind]);
                 frm.ShowDialog();
+
+                listViewFillings.SelectedItems.Clear();
+            }
+            else
+            {
+                string message = "Please, select a filling row.";
+                string caption = "No selection!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
             }
         }
     }
